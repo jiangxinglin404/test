@@ -1,9 +1,7 @@
 <?php
 
 
-echo phpinfo();
-
-
+echo 'HELLO WORLD !';
 
 
 
