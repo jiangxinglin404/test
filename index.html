@@ -5,7 +5,7 @@
 	<title></title>
 </head>
 <body>
-<!-- <textarea name="remarks" id="remarks" style="min-height: 1000px;min-width: 500px;" ></textarea> -->
+<textarea name="remarks" id="remarks" style="min-height: 1000px;min-width: 500px;" ></textarea>
 <script type="text/javascript">
 
 
@@ -20,9 +20,9 @@ json = json.replace(/,/g,",\r\n");
 json = json.replace(/}/g,",\r\n}");
 json = json.replace(/\[/g,"[\r\n");
 
-document.write(json);
-// var remarks= document.getElementById('remarks');
-// remarks.value= json;
+//document.write(json);
+var remarks= document.getElementById('remarks');
+remarks.value= json;
 </script>
 
 
