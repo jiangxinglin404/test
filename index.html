@@ -14,11 +14,13 @@
 
 	var  json = '{"status": {     "code": "1",     "msg": "成功" }, "data": {     "my_prop": [            {             "id": "1",             "cnum": "2",                "status": "1",                "cname": "翻倍卡",               "desc": "x2"            },         {             "id": "2",             "cnum": "1",             "status": "0",             "cname": "包邮",             "desc": "包邮"         },         {             "id": "3",             "cnum": "1",             "status": "0",             "cname": "2",             "desc": ""         },         {             "id": "4",             "cnum": "1",             "status": "0",             "cname": "3",             "desc": "wq"         }     ],     "prop_shop": [           {             "id": "1",             "cname": "翻倍卡",             "desc": "x2",             "price": "1.00"         },         {             "id": "2",             "cname": "包邮",             "desc": "包邮",             "price": "10.00"            },         {             "id": "3",             "cname": "2",             "desc": "",             "price": "0.00"         }     ] }, "login_tips_box": ""}';
 
-json = json.trim();
-json = json.replace(/{/g,"{\r\n");
-json = json.replace(/,/g,",\r\n");
+json = json.replace(/\s+/g,'');
+json = json.replace(/{/g,"{\r\n  ");
+json = json.replace(/,/g,",\r\n  ");
 json = json.replace(/}/g,",\r\n}");
 json = json.replace(/\[/g,"[\r\n");
+json = json.replace(/,\r\n  \{/g,",\r\n{");
+json = json.replace(/},\r\n  "/g,"},\r\n\"");
 
 //document.write(json);
 var remarks= document.getElementById('remarks');
