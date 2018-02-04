@@ -1,41 +1,158 @@
-<!DOCTYPE html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<title></title>
+    <title>‘⁄œﬂ¥˙¬Î∏Ò ΩªØ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <link rel="shortcut icon" href="http://tool.oschina.net/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="http://tool.oschina.net/css/basic.css?20120912" type="text/css"/>
+    <script type="text/javascript" src='http://tool.oschina.net/js/jquery/jquery-1.7.2.js'></script>
+    <script type="text/javascript" src='http://tool.oschina.net/js/jquery/jquery.cookies.2.2.0.min.js'></script>
+    <link rel="stylesheet" href='http://tool.oschina.net/js/bootstrap/css/bootstrap.min.css'/>
+    <script src='http://tool.oschina.net/js/bootstrap/js/bootstrap.min.js'></script>
+
 </head>
 <body>
-<a href="javascript:jsonBeautify();">Ê†ºÂºèÂåñ</a><br>
-<textarea name="remarks" id="remarks" style="min-height: 1000px;min-width: 500px;" ></textarea>
+<!--     Õ∑≤øheaderø™ º    -->
+<div id="header">
+    <div class="wrapper">
+        <div id="mainSearch">
 
-<script src='http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js' type="text/javascript"></script>
-<script type="text/javascript">
+            <!-- Put the following javascript before the closing </head> tag. -->
+            <style>
+                .go_search {width: 300px;}
+                .go_search .gsc-input td,.go_search .gsc-input tddiv {padding:0 0 0 0;margin:0 0 0 0;height:23px;}
+                .go_search .gsc-input input:focus{
+                    border:none;
 
-	function jsonBeautify() {
-		var json = $('#remarks').val();
-		alert(json);return;
-        json = json.replace(/\s+/g,'');
-        json = json.replace(/{/g,"{\r\n  ");
-        json = json.replace(/,/g,",\r\n  ");
-        json = json.replace(/}/g,",\r\n}");
-        json = json.replace(/\[/g,"[\r\n");
-        json = json.replace(/,\r\n  \{/g,",\r\n{");
-        json = json.replace(/},\r\n  "/g,"},\r\n\"");
-        //document.write(json);
-        var remarks= document.getElementById('remarks');
-        remarks.value= json;
+                }
+                .go_search .gsc-input input {
+                    border:none;
+                    height:23px;
+                    width: 100%;
+                    padding: 0px;
+                    border: none;
+                    margin: 0px;
+                    height: auto;
+                    outline: none;
+                    -webkit-box-shadow:none;
+                    -moz-box-shadow:none;
+                    box-shadow:none;
+                    background-image: url(../img/google_custom_search_watermark.gif?20140625);
+                    background-color: rgb(255, 255, 255);
+                    background-position: 0% 50%;
+                    background-repeat: no-repeat no-repeat;
+                }
+            </style>
+
+            <div class="go_search">
+                <!-- Place this tag where you want the search box to render -->
+            </div>
+        </div>
+        <div id="logo" class="texthidden" onclick="javascript:location.href='/'">
+            <h1>ø™‘¥÷–π˙‘⁄œﬂπ§æﬂ</h1>
+        </div>
+    </div>
+</div>
+<!--     Õ∑≤øheaderΩ· ¯    -->
+<div class="wrapper">
+    <!--<script type="text/javascript" src="http://tool.oschina.net/js/ad/tag.js?date=20140625"></script>-->
+</div>
+<style>
+    .leftBar .title,.rightBar .title,.topBar .title{margin-bottom:10px;}
+    .bottomBar .title{margin:10px 0;}
+</style>
+<link id="css" rel="stylesheet" type="text/css" href="http://tool.oschina.net/js/syntaxhighlighter_3.0.83/styles/shCoreDefault.css"/>
+<link id="css" rel="stylesheet" type="text/css" href="http://tool.oschina.net/js/jquery/textarearesizer/style.css"/>
+<script type="text/javascript" src="http://tool.oschina.net/js/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+<script type="text/javascript" src="http://tool.oschina.net/js/jquery/jquery.form-2.82.js"></script>
+<script type="text/javascript" src="http://tool.oschina.net/js/jquery/textarearesizer/jquery.textarearesizer.compressed.js"></script>
+<script>
+    $(function(){
+        $('textarea.resizable:not(.processed)').TextAreaResizer();
+        $('div.resizable:not(.processed)').TextAreaResizer();
+    });
+</script>
+<div id="mainContent" class="tool_content wrapper">
+
+    <div class="toolUsing clearfix">
+        <div class="toolsTab  clearfix">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="/codeformat/json">JSON∏Ò ΩªØ</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <form id="codeformat_form" action="/action/format/json" method="POST">
+            <link href="http://tool.oschina.net/tools/json_format/s.css" type="text/css" rel="stylesheet">
+            <script type="text/javascript" src="http://tool.oschina.net/tools/json_format/c.js"></script>
+            <script type="text/javascript">
+                function format_(){
+                    var json = $("#jsondata").val();
+                    $("#fjson").html(fmt);
+                }
+            </script>
+            <div class="topBar">
+                <div class="title">¥˝∏Ò ΩªØJSON£∫</div>
+                <textarea name="json" id="RawJson" style="resize:none;" class="resizable"></textarea>
+            </div>
+            <div class="operateTB form-inline">
+                <label for="TabSize" style="display: none;">ÀıΩ¯¡ø£∫</label>
+                <select id="TabSize" onchange="TabSizeChanged()" class="span1" style="display: none;">
+                    <option value="1">1</option>
+                    <option value="2" selected="true">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <label for="QuoteKeys" class="checkbox" style="display: none;">
+                    <input type="checkbox" id="QuoteKeys" onclick="QuoteKeysClicked()" checked="true">“˝∫≈
+                </label>
+                <span id="CollapsibleViewHolder" style="visibility: hidden; margin-right: 10px;">
+              <label for="CollapsibleView"  class="checkbox" style="display: none;">
+                <input type="checkbox" id="CollapsibleView" onclick="CollapsibleViewClicked()" >œ‘ æøÿ÷∆
+              </label>
+  </span>
+<span id="CollapsibleViewDetail" style="visibility: visible;margin-right:10px;display: none; ">
+    <a href="javascript:void(0);" onclick="ExpandAllClicked()">’πø™</a>
+    <a href="javascript:void(0);" onclick="CollapseAllClicked()">µ˛∆</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(3)">2º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(4)">3º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(5)">4º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(6)">5º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(7)">6º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(8)">7º∂</a>
+    <a href="javascript:void(0);" onclick="CollapseLevel(9)">8º∂</a>
+</span>
+<input class="btn btn-small btn-primary" data-loading-text="’˝‘⁄∏Ò ΩªØjson..." id="format"  type="button" onclick="Process()" value="∏Ò ΩªØ"/>
+ </div>
+            <div class="bottomBar">
+                <div class="title">∏Ò ΩªØJSON£∫</div>
+                <div id="Canvas" class="Canvas well resizable" style="height:200px;overflow:auto;margin-bottom:0px;"></div>
+            </div>        </form>
+    </div>
+</div>
+
+<script>
+    function verifyEmail(){
+        if(null == $("#advice_email").val().match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)){
+            $("#email_error").html(" email ‰»Î¥ÌŒÛ ");
+            $("#advice_email").focus();
+        }
+        else{
+            $("#email_error").html("<i class='icon-ok'></i>");
+            $("#advice_submit").removeAttr("disabled");
+        }
     }
     $(function () {
-		var w = $(document).width()+'px';
-		var h = '1000000000000px';
-		$('#remarks').width( w);
-		$('#remarks').height(h);
-
-
+        var w = document.body.clientWidth+'px';
+        var h = '1000000000000px';
+        $('#RawJson').width( w);
+        $('#Canvas').width(w);
+        $('#Canvas').height(h);
     })
-
 </script>
-
-
 </body>
 </html>
+<!-- Generated by OSCTools.NET (Sun Feb 04 10:18:43 CST 2018) 2ms -->
